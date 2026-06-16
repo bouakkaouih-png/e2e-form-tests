@@ -1,3 +1,4 @@
+import * as path from 'path';
 import { BasePage } from './BasePage';
 
 export class FormPage extends BasePage {
@@ -8,10 +9,11 @@ export class FormPage extends BasePage {
 
   private submitButton = 'button[type="submit"]';
   private successModal = '#myModal';
-  private errorModal = '#modal-content';
+  private errorModal = '#myModal';
 
   async open() {
-    await this.goto('file:///Users/bouakkaoui/Downloads/ceWeekEnd%20(1).html');
+    const filePath = path.resolve(process.cwd(), 'fixtures', 'ceWeekEnd.html');
+    await this.goto(`file://${filePath}`);
   }
 
   async setNom(v: string) {

@@ -21,7 +21,7 @@ jobs:
 
       - run: npx playwright install --with-deps
 
-      - run: mkdir -p reports
+      - run: mkdir -p reports fixtures
 
       - run: npm test
 
